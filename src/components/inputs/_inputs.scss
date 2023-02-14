@@ -1,0 +1,54 @@
+@use "../../styles/_variables.scss" as *;
+
+.group {
+  position: relative;
+  padding-bottom: 1em;
+  // max-width: 420px;
+  margin-bottom: 40px;
+
+  label {
+    position: absolute;
+    pointer-events: none;
+    top: 1em;
+    transition: 0.2s ease all;
+    color: #ccc;
+  }
+
+  input[type="text"] {
+    background-color: transparent;
+    padding: 0.75em 0;
+    line-height: 1.5em;
+    border: 0;
+    display: block;
+    width: 100%;
+    margin-top: 0.5em;
+    border-bottom: 1px solid $primary-color;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 96%,
+      $primary-color 4%
+    );
+    background-position: -100em 0;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transition: 0.3s cubic-bezier(0.64, 0.09, 0.08, 1) all;
+
+    &:focus,
+    &[data-value="true"] {
+      ~ label {
+        color: $primary-color;
+        font-size: 0.875em;
+        top: -1.5em;
+      }
+    }
+
+    &:focus {
+      background-position: 0 0;
+      outline: none;
+    }
+  }
+
+  span {
+    color: $code-color;
+  }
+}

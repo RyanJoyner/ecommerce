@@ -1,0 +1,40 @@
+@use "../../styles/_animation.scss" as *;
+
+.grid {
+  display: grid;
+}
+
+.about-container {
+  display: flex;
+  height: 90vh;
+  vertical-align: baseline;
+  padding: 15% 0;
+  animation: 0.8s ease-out 0s 1 slideInRight;
+
+  img {
+    height: fit-content;
+    width: 200px;
+    margin: 0 0 0 auto;
+  }
+
+  .about {
+    margin: 0 50px;
+
+    h1 {
+      font-size: 4em;
+    }
+
+    p {
+      font-size: 2em;
+    }
+
+    .action {
+      font-size: 1.5em;
+      letter-spacing: 4px;
+    }
+  }
+
+  .last {
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,67 @@
+@use "../styles/_animation.scss" as *;
+@use "../styles/_variables.scss" as *;
+
+.landing-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  column-gap: 25px;
+  padding-top: 6%;
+  @media (max-width: 420px) {
+    grid-template-columns: none;
+    grid-template-rows: 1fr 1.25fr;
+  }
+}
+
+.text {
+  position: fixed;
+  top: 75px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 7.5px;
+  animation: 0.8s ease-out 0s 1 slideInLeft;
+
+  @media (max-width: 420px) {
+    display: none;
+  }
+}
+
+.landing-copy {
+  display: flex;
+  flex-direction: column-reverse;
+  text-align: right;
+  font-size: 1rem;
+  margin: 0 0 100px 0;
+  animation: 0.8s ease-out 0s 1 slideInRight;
+
+  .name {
+    font-size: 6rem;
+    margin-bottom: 10px;
+    @media (max-width: 420px) {
+      font-size: 4rem;
+      margin-top: 50px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    max-width: 350px;
+    margin: 0;
+    text-align: center;
+    animation: 0.8s ease-out 0s 1 slideInLeft;
+    .transparent-btn {
+      align-self: center;
+    }
+  }
+}
+
+.landing-img {
+  width: 500px;
+  height: auto;
+  margin: auto;
+  animation: 0.8s ease-out 0s 1 slideInRight;
+
+  @media (max-width: 420px) {
+    max-width: 300px;
+    margin: auto;
+    // margin-top: -10px;
+  }
+}

@@ -1,0 +1,32 @@
+@use "../../styles/_variables.scss" as *;
+
+.grid {
+  display: grid;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  vertical-align: baseline;
+  padding: 15% 0;
+  width: 50%;
+  margin: auto;
+
+  h1 {
+    margin-bottom: 50px;
+  }
+
+  .arrow-btn {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    cursor: pointer;
+    width: 100%;
+
+    i {
+      margin-right: 10px;
+      font-size: 1.1em;
+    }
+  }
+}

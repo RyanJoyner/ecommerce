@@ -1,0 +1,19 @@
+// @use "~/styles/_variables.scss" as *;
+
+.post {
+  padding: 10% 15%;
+
+  h1 {
+    margin-bottom: 50px;
+  }
+
+  @media (max-width: 1000px) {
+    padding: 15%;
+  }
+
+  @media (max-width: 600px) {
+    padding: 25% 1% 15% 1%;
+  }
+}
+
+

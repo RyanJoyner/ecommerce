@@ -1,0 +1,75 @@
+@use "../../styles/_variables.scss" as *;
+
+// Navbar
+.navbar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background: white;
+  position: fixed;
+  left: 0;
+  padding: 10px 10% 15px 10%;
+  border-bottom: 0.5px solid;
+
+  @media (max-width: 420px) {
+    padding: 10px 5%;
+  }
+
+  .navbar-section {
+    padding-left: "-0.4rem";
+    align-items: center;
+    display: flex;
+    flex: 1 0 0;
+
+    @media (max-width: 420px) {
+      font-size: 0.8em;
+    }
+
+    &:not(:first-child):last-child {
+      justify-content: flex-end;
+    }
+  }
+
+  .home-text {
+    @media (max-width: 420px) {
+      display: none;
+    }
+  }
+
+  .navbar-center {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+  }
+}
+
+.brand {
+  line-height: 1;
+}
+
+.btn.btn-link {
+  background: transparent;
+  border-color: transparent;
+  color: $primary-color;
+}
+
+.btn {
+  appearance: none;
+  background: #fff;
+  border: 0.05rem solid $primary-color;
+  border-radius: 0.1rem;
+  color: $primary-color;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.8rem;
+  height: 1.8rem;
+  line-height: 1.2rem;
+  outline: none;
+  padding: 0.25rem 0.4rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s, border 0.2s, box-shadow 0.2s, color 0.2s;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
