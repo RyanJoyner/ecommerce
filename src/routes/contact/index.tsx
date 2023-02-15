@@ -39,7 +39,7 @@ export default component$(() => {
     message: { value: "", isValid: true },
   });
 
-  let formIsValid = useSignal(false);
+  const formIsValid = useSignal(false);
 
   const sendEmail = $(() => {
     const { name, email, message } = state;

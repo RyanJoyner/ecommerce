@@ -11,7 +11,6 @@ import {
   ServiceWorkerRegister,
 } from "@builder.io/qwik-city";
 import { RouterHead } from "./components/router-head/router-head";
-import client from "./context/contentful/api";
 import ContentfulContext from "./context/contentful/context";
 import global from "./global.scss?inline";
 
@@ -26,17 +25,15 @@ export default component$(() => {
 
   const state = useStore({
     posts: [],
+    url: `https://cdn.contentful.com/spaces/${"wgi0b9s92wh1"}/environments/${"master"}/entries?access_token=${"jAg20O0nc1R__suBcbSSBr7e0MVX21vY-5uzh6wJJrU"}`,
   });
 
   useContextProvider(ContentfulContext, state);
 
   useTask$(async () => {
-    await client()
-      .getEntries()
-      .then((response: { items: any }) => {
-        state.posts = response.items;
-      })
-      .catch(console.error);
+    const res = await fetch(state.url);
+    const json = await res.json();
+    state.posts = json.items;
   });
 
   return (

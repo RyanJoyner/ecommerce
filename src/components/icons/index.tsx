@@ -1,4 +1,4 @@
-import { component$, JSXChildren, useStylesScoped$ } from "@builder.io/qwik";
+import { component$, JSXChildren } from "@builder.io/qwik";
 
 interface IconProps {
   class?: string;

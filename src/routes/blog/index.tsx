@@ -43,7 +43,7 @@ export default component$(() => {
       <div class="list">
         {Posts.map(({ id, title }: { id: string; title: string }) => {
           // @ts-ignore
-          let isActive = activeKeyMap[id].find((name) => name === store.name)
+          const isActive = activeKeyMap[id].find((name) => name === store.name)
             ? "active"
             : "";
           return (

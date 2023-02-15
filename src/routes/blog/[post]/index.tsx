@@ -27,7 +27,7 @@ export default component$(() => {
     }) || {};
 
   useTask$(
-    ({ track, cleanup }) => {
+    ({ cleanup }) => {
       if (postRef.value) {
         postRef.value.innerHTML = documentToHtmlString(post.fields.html);
       }
