@@ -11,9 +11,9 @@ export default extendConfig(baseConfig, () => {
       },
     },
     plugins: [
-      qwikCity({ basePathname: "/portfolio/" }),
+      qwikCity({ basePathname: "/portfolio" }),
       staticAdaptor({
-        origin: "https://ryanjoyner.github.io/portfolio",
+        origin: "https://ryanjoyner.github.io",
       }),
     ],
   };
