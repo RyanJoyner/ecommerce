@@ -5,16 +5,13 @@ jobs:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
-    steps:
+    
     - name: Setup Node.js for use with actions
+    steps:
       uses: actions/setup-node@v3
-      with:
-        node-version: 16
-
-    - name: 🚚 Get latest code
       uses: actions/checkout@v3
-
-    - name: Clean install dependencies
+      with: 
+        node-version: 16
       run: npm ci
 
     - name: Build app
