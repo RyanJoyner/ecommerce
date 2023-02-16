@@ -4,10 +4,9 @@ jobs:
   web-deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    
-    - name: Setup Node.js for use with actions
+    if: github.ref == 'refs/heads/main'    
     steps:
+    - name: Setup Node.js for use with actions
       uses: actions/setup-node@v3
       uses: actions/checkout@v3
       with: 
