@@ -11,10 +11,10 @@ jobs:
         with:
           node-version: 16
 
-      - name: Setup actions
+      - name: 🚚 Get latest code
         uses: actions/checkout@v3
 
-      - name: Install packages
+      - name: Clean install dependencies
         run: npm ci
 
       - name: Build app

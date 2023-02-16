@@ -1,4 +1,4 @@
-import { staticAdaptor } from "@builder.io/qwik-city/adaptors/static/vite";
+import { staticAdapter } from '@builder.io/qwik-city/adapters/static/vite';
 import { extendConfig, qwikCity } from "@builder.io/qwik-city/vite";
 import baseConfig from "../../vite.config";
 
@@ -11,9 +11,9 @@ export default extendConfig(baseConfig, () => {
       },
     },
     plugins: [
-      qwikCity({ basePathname: "/portfolio" }),
-      staticAdaptor({
-        origin: "https://ryanjoyner.github.io",
+      qwikCity({ basePathname: "/portfolio/" }),
+      staticAdapter({
+        origin: "https://ryanjoyner.github.io/",
       }),
     ],
   };
