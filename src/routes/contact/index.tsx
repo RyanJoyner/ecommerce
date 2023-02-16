@@ -89,7 +89,6 @@ export default component$(() => {
             formIsValid.value = state[field].value.length > 0;
           }
           if (formIsValid.value) {
-            console.log("fired");
             sendEmail();
           }
         }}
