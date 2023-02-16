@@ -2,7 +2,7 @@
   "name": "my-qwik-basic-starter",
   "description": "App with Routing built-in (recommended)",
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=15.0.0"
   },
   "private": true,
   "scripts": {
@@ -23,8 +23,8 @@
     "qwik": "qwik"
   },
   "devDependencies": {
-    "@builder.io/qwik": "0.16.2",
-    "@builder.io/qwik-city": "0.0.128",
+    "@builder.io/qwik": "0.18.1",
+    "@builder.io/qwik-city": "0.2.1",
     "@types/eslint": "8.4.10",
     "@types/node": "latest",
     "@typescript-eslint/eslint-plugin": "5.45.0",
