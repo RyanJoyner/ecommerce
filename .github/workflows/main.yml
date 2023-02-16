@@ -7,9 +7,9 @@ jobs:
     if: github.ref == 'refs/heads/main'
     steps:
       - name: Setup Node.js for use with actions
-        uses: actions/setup-node@v1
-        with:
-          node-version: 16
+       runs:
+        using: 'node16'
+        # main: 'main.js'
 
       - name: 🚚 Get latest code
         uses: actions/checkout@v3
