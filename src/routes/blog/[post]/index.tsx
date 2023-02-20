@@ -39,6 +39,7 @@ export default component$(() => {
       };
 
       const controller = new AbortController();
+      
       cleanup(() => controller.abort());
     },
     { eagerness: "load" }

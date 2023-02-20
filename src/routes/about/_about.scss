@@ -11,26 +11,54 @@
   padding: 15% 0;
   animation: 0.8s ease-out 0s 1 slideInRight;
 
+  @media (max-width: 420px) {
+    flex-direction: column;
+  }
+
   img {
     height: fit-content;
     width: 200px;
     margin: 0 0 0 auto;
+
+    @media (max-width: 420px) {
+      margin: 20px auto;
+    }
   }
 
   .about {
     margin: 0 50px;
 
+    @media (max-width: 420px) {
+      margin: 20px 0;
+      text-align: center;
+      .transparent-btn {
+        display: initial;
+        align-self: center;
+      }
+    }
+
     h1 {
       font-size: 4em;
+      @media (max-width: 420px) {
+        font-size: 2em;
+      }
     }
 
     p {
       font-size: 2em;
+      @media (max-width: 420px) {
+        font-size: 1em;
+      }
     }
 
     .action {
       font-size: 1.5em;
       letter-spacing: 4px;
+
+      @media (max-width: 420px) {
+        font-size: 1em;
+        margin: auto;
+      }
     }
   }
 

@@ -11,6 +11,10 @@
       display: flex;
       padding-left: 150px;
     }
+
+    @media (max-width: 420px) {
+      width: 320px;
+    }
   }
 
   .list {
@@ -18,16 +22,42 @@
     float: right;
     padding: 10% 0;
 
-    .post {
+    .active {
+      margin-left: 30px;
+      text-decoration: underline;
+      transition-duration: 0.5s;
+
+      @media (max-width: 420px) {
+        margin-left: -15px;
+      }
+    }
+
+    .post-tag {
       width: 420px;
       padding: 20px 0 20px 0;
       cursor: pointer;
+
+      @media (max-width: 420px) {
+        font-size: 1.5em;
+        width: 320px;
+        text-align: right;
+      }
+    }
+
+    @media (max-width: 420px) {
+      margin-top: 430px;
     }
   }
 
-  .active {
-    margin-left: 30px;
-    text-decoration: underline;
-    transition-duration: 0.5s;
+  .company-text {
+    position: fixed;
+    left: 45%;
+    top: 75%;
+    max-width: 600px;
+    font-size: 1.25rem;
+
+    @media (max-width: 420px) {
+      display: none;
+    }
   }
 }

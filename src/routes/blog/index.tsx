@@ -47,23 +47,13 @@ export default component$(() => {
             ? "active"
             : "";
           return (
-            <div class={`h1 post ${isActive}`}>
+            <div class={`h1 post-tag ${isActive}`}>
               <a href={id}>{title}</a>
             </div>
           );
         })}
       </div>
-      <div
-        style={{
-          position: "fixed",
-          left: "45%",
-          top: "75%",
-          maxWidth: "600px",
-          fontSize: "1.25rem",
-        }}
-      >
-        {store.message}
-      </div>
+      <div class="company-text">{store.message}</div>
     </div>
   );
 });
