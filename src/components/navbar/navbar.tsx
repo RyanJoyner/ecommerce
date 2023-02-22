@@ -4,10 +4,10 @@ import Link from "../buttons/Link";
 // import Resume from "../../../public/Resume.pdf";
 
 interface NavbarProps {
-  origin: string;
+  href: string;
 }
 
-export default component$(({ origin }: NavbarProps) => {
+export default component$(({ href }: NavbarProps) => {
   useStylesScoped$(styles);
 
   return (
@@ -20,10 +20,10 @@ export default component$(({ origin }: NavbarProps) => {
         </a>
       </section>
       <section class="navbar-section">
-        <Link href={`${origin}/about`}>About</Link>
-        <Link href={`${origin}/blog`}>Blog</Link>
-        <Link href={`${origin}/contact`}>Contact</Link>
-        <Link href={`${origin}/technologies`}>Technologies</Link>
+        <Link href={`${href}/about`}>About</Link>
+        <Link href={`${href}/blog`}>Blog</Link>
+        <Link href={`${href}/contact`}>Contact</Link>
+        <Link href={`${href}/technologies`}>Technologies</Link>
       </section>
     </navbar>
   );
