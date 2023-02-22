@@ -3,7 +3,6 @@ import {
   useStylesScoped$,
   useStore,
   useContext,
-  useClientEffect$,
 } from "@builder.io/qwik";
 import ContentfulContext from "../../context/contentful/context";
 import type { DocumentHead } from "@builder.io/qwik-city";
@@ -25,8 +24,6 @@ export default component$(() => {
     postContext.posts.map(({ sys, fields }) => {
       return { ...fields, id: sys.id };
     }) || [];
-
-  useClientEffect$(() => {});
 
   const activeKeyMap = {
     "7pJV1v5zUdphd7EFPbijHt": ["Disney"],

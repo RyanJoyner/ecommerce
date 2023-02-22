@@ -6,9 +6,13 @@
   grid-template-columns: 3fr 2fr;
   column-gap: 25px;
   padding-top: 6%;
+
   @media (max-width: 420px) {
-    grid-template-columns: none;
-    grid-template-rows: 1fr 1.25fr;
+    display: flex;
+    flex-direction: column;
+    flex-direction: column-reverse;
+    // grid-template-columns: none;
+    // grid-template-rows: 1fr 1.25fr;
   }
 }
 
@@ -33,15 +37,6 @@
   margin: 0 0 100px 0;
   animation: 0.8s ease-out 0s 1 slideInRight;
 
-  .name {
-    font-size: 6rem;
-    margin-bottom: 10px;
-    @media (max-width: 420px) {
-      font-size: 4rem;
-      margin-top: 50px;
-    }
-  }
-
   @media (max-width: 420px) {
     max-width: 350px;
     margin: 0;
@@ -49,6 +44,14 @@
     animation: 0.8s ease-out 0s 1 slideInLeft;
     .transparent-btn {
       align-self: center;
+    }
+  }
+
+  .name {
+    font-size: 6rem;
+    margin-bottom: 10px;
+    @media (max-width: 420px) {
+      font-size: 4rem;
     }
   }
 }
@@ -62,6 +65,7 @@
   @media (max-width: 420px) {
     max-width: 300px;
     margin: auto;
+    margin-top: 20px;
     // margin-top: -10px;
   }
 }

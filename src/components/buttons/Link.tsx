@@ -19,7 +19,7 @@ export default component$(({ href = "", target = "" }: LinkProps) => {
   const isActive =
     pathname === `${href}/`
       ? {
-          borderBottom: "2px solid",
+          // borderBottom: "2px solid",
         }
       : {};
 
