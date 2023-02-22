@@ -1,13 +1,8 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import styles from "./_navbar.scss?inline";
 import Link from "../buttons/Link";
-// import Resume from "../../../public/Resume.pdf";
 
-interface NavbarProps {
-  href: string;
-}
-
-export default component$(({ href }: NavbarProps) => {
+export default component$(() => {
   useStylesScoped$(styles);
 
   return (
@@ -20,10 +15,10 @@ export default component$(({ href }: NavbarProps) => {
         </a>
       </section>
       <section class="navbar-section">
-        <Link href={`${href}/about`}>About</Link>
-        <Link href={`${href}/blog`}>Blog</Link>
-        <Link href={`${href}/contact`}>Contact</Link>
-        <Link href={`${href}/technologies`}>Technologies</Link>
+        <Link href="/about">About</Link>
+        <Link href="/blog">Blog</Link>
+        <Link href="/contact">Contact</Link>
+        <Link href="/technologies">Technologies</Link>
       </section>
     </navbar>
   );

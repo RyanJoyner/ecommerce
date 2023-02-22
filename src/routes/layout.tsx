@@ -9,8 +9,7 @@ export const useGetContentfulEntries = loader$(async (env) => {
   const url = `https://cdn.contentful.com/spaces/${VITE_SPACE}/environments/${"master"}/entries?access_token=${VITE_CONTENTFUL_ACCESS_TOKEN}`;
   const res = await fetch(url);
   const json = await res.json();
-  console.log(env)
-  return { data: json.items, href: env.url.href };
+  return { data: json.items, origin: env.url.origin };
 });
 
 export default component$(() => {
@@ -21,7 +20,7 @@ export default component$(() => {
   return (
     <>
       <main>
-        <Navbar href={signal.value.href} />
+        <Navbar origin={signal.value.origin} />
         <Slot />
       </main>
       <footer>
