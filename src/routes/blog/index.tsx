@@ -12,18 +12,24 @@ import styles from "./_blog.scss?inline";
 
 import ChartWrapper from "./ChartWrapper";
 
+interface postContextShape {
+  posts?: any[];
+}
+
 export default component$(() => {
   useStylesScoped$(styles);
   const store = useStore({
     name: "",
     message: "",
   });
-  const postContext = useContext(ContentfulContext);
 
-  const Posts =
-    postContext.posts.map(({ sys, fields }) => {
-      return { ...fields, id: sys.id };
-    }) || [];
+  const postContext: postContextShape = useContext(ContentfulContext);
+
+  const Posts = postContext.posts
+    ? postContext.posts.map(({ sys, fields }) => {
+        return { ...fields, id: sys.id };
+      }) || []
+    : [];
 
   const activeKeyMap = {
     "7pJV1v5zUdphd7EFPbijHt": ["Disney"],
