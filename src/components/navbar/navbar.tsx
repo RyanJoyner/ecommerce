@@ -1,5 +1,4 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
-import { loader$ } from "@builder.io/qwik-city";
 import styles from "./_navbar.scss?inline";
 import Link from "../buttons/Link";
 // import Resume from "../../../public/Resume.pdf";
