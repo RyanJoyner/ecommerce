@@ -19,17 +19,16 @@ export default component$(() => {
             component and data architecture for web applications ever since.
           </p>
           <p class="last">Let's tell your data driven story together!</p>
-          <button
-            class="transparent-btn"
+          <div
+            class="transparent-btn arrow-btn resume-btn"
             onClick$={() => {
               window.open("/Resume.png", "_blank", "fullscreen=yes");
               return false;
             }}
           >
-            <div class="arrow-btn">
-              <i class="action">Resume</i> <RightArrow />
-            </div>
-          </button>
+            <i class="action">Resume</i>
+            <RightArrow />
+          </div>
         </div>
       </div>
     </div>

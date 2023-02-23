@@ -20,13 +20,11 @@ export default component$(() => {
       <div class="landing-grid">
         <div class="landing-copy">
           <a
-            class="transparent-btn"
+            class="transparent-btn arrow-btn"
             href="/contact"
           >
-            <div class="arrow-btn">
               <i>Let's Get Real !</i>
               <RightArrow />
-            </div>
           </a>
           <span class="tag">
             Former Journalist, Current Software Engineer, Your Future Consultant
