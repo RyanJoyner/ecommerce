@@ -1,20 +1,7 @@
-import { Handler, HandlerEvent, HandlerContext } from "@netlify/functions";
 import { component$, useContextProvider, Slot } from "@builder.io/qwik";
 import { loader$ } from "@builder.io/qwik-city";
 import Navbar from "../components/navbar/navbar";
 import ContentfulContext from "../context/contentful/context";
-
-// const handler: Handler = async (
-//   event: HandlerEvent,
-//   context: HandlerContext
-// ) => {
-//   const { VITE_SPACE, VITE_CONTENTFUL_ACCESS_TOKEN } = process.env;
-
-//   return {
-//     statusCode: 200,
-//     body: { VITE_SPACE, VITE_CONTENTFUL_ACCESS_TOKEN },
-//   };
-// };
 
 export const useGetContentfulEntries = loader$(async () => {
   const { VITE_SPACE, VITE_CONTENTFUL_ACCESS_TOKEN } = process.env;
