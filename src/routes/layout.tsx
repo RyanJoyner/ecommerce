@@ -1,15 +1,27 @@
+import { Handler, HandlerEvent, HandlerContext } from "@netlify/functions";
 import { component$, useContextProvider, Slot } from "@builder.io/qwik";
 import { loader$ } from "@builder.io/qwik-city";
 import Navbar from "../components/navbar/navbar";
 import ContentfulContext from "../context/contentful/context";
 
-export const useGetContentfulEntries = loader$(async () => {
-  // const { VITE_SPACE, VITE_CONTENTFUL_ACCESS_TOKEN } = process.env;
-  // const url = `https://cdn.contentful.com/spaces/${VITE_SPACE}/environments/${"master"}/entries?access_token=${VITE_CONTENTFUL_ACCESS_TOKEN}`;
-  // const res = await fetch(url);
-  // const json = await res.json();
+// const handler: Handler = async (
+//   event: HandlerEvent,
+//   context: HandlerContext
+// ) => {
+//   const { VITE_SPACE, VITE_CONTENTFUL_ACCESS_TOKEN } = process.env;
 
-  return { data: [] };
+//   return {
+//     statusCode: 200,
+//     body: { VITE_SPACE, VITE_CONTENTFUL_ACCESS_TOKEN },
+//   };
+// };
+
+export const useGetContentfulEntries = loader$(async () => {
+  const { VITE_SPACE, VITE_CONTENTFUL_ACCESS_TOKEN } = process.env;
+  const url = `https://cdn.contentful.com/spaces/${VITE_SPACE}/environments/${"master"}/entries?access_token=${VITE_CONTENTFUL_ACCESS_TOKEN}`;
+  const res = await fetch(url);
+  const json = await res.json();
+  return { data: json.items };
 });
 
 export default component$(() => {
