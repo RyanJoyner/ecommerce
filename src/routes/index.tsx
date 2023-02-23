@@ -1,15 +1,12 @@
-import {
-  component$,
-  useStylesScoped$,
-  useSignal,
-} from "@builder.io/qwik";
-import type { DocumentHead } from "@builder.io/qwik-city";
+import { $, component$, useStylesScoped$, useSignal } from "@builder.io/qwik";
+import { DocumentHead, useNavigate } from "@builder.io/qwik-city";
 
-import { RightArrow } from "~/components/icons";
+import { ArrowBtn } from "~/components/buttons";
 
 import styles from "./_landing.scss?inline";
 
 export default component$(() => {
+  const navigate = useNavigate();
   useStylesScoped$(styles);
   const textRef = useSignal<HTMLDivElement>();
   return (
@@ -19,13 +16,12 @@ export default component$(() => {
       </div>
       <div class="landing-grid">
         <div class="landing-copy">
-          <a
-            class="transparent-btn arrow-btn"
-            href="/contact"
-          >
-              <i>Let's Get Real !</i>
-              <RightArrow />
-          </a>
+          <ArrowBtn
+            text="Let's Get Real !"
+            callBack={$(() => {
+              navigate("/contact");
+            })}
+          />
           <span class="tag">
             Former Journalist, Current Software Engineer, Your Future Consultant
           </span>

@@ -1,4 +1,4 @@
-@use "../../styles/_animation.scss" as *;
+// @use "../../styles/_animation.scss" as *;
 
 .grid {
   display: grid;
@@ -8,7 +8,7 @@
   display: flex;
   height: 90vh;
   vertical-align: baseline;
-  padding: 15% 0;
+  padding: 12% 0;
   animation: 0.8s ease-out 0s 1 slideInRight;
 
   @media (max-width: 420px) {
@@ -58,16 +58,6 @@
       @media (max-width: 420px) {
         font-size: 1em;
         margin: auto;
-      }
-    }
-
-    .resume-btn {
-      justify-content: start;
-      margin-top: 20px;
-      font-size: 1.25em;
-
-      i {
-        margin-right: 20px;
       }
     }
   }

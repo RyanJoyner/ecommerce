@@ -1,6 +1,7 @@
-import { component$, useStylesScoped$ } from "@builder.io/qwik";
+import { $, component$, useStylesScoped$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { RightArrow } from "~/components/icons";
+
+import { ArrowBtn } from "~/components/buttons";
 
 import styles from "./_about.scss?inline";
 
@@ -19,15 +20,15 @@ export default component$(() => {
             component and data architecture for web applications ever since.
           </p>
           <p class="last">Let's tell your data driven story together!</p>
-          <div
-            class="transparent-btn arrow-btn resume-btn"
-            onClick$={() => {
-              window.open("/Resume.png", "_blank", "fullscreen=yes");
-              return false;
-            }}
-          >
-            <i class="action">Resume</i>
-            <RightArrow />
+          <div class="resume-btn">
+            <ArrowBtn
+              text="Resume"
+              customClass="resume-btn"
+              callBack={$(() => {
+                window.open("/Resume.png", "_blank", "fullscreen=yes");
+                return false;
+              })}
+            />
           </div>
         </div>
       </div>
