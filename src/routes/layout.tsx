@@ -8,12 +8,13 @@ export const useGetContentfulEntries = loader$(async () => {
   const url = `https://cdn.contentful.com/spaces/${VITE_SPACE}/environments/${"master"}/entries?access_token=${VITE_CONTENTFUL_ACCESS_TOKEN}`;
   const res = await fetch(url);
   const json = await res.json();
+  console.log("fired");
   return { data: json.items };
 });
 
 export default component$(() => {
   const signal = useGetContentfulEntries();
-
+  console.log(signal);
   useContextProvider(ContentfulContext, { posts: signal.value.data });
 
   return (
