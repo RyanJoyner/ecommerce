@@ -3,12 +3,12 @@ import { loader$ } from "@builder.io/qwik-city";
 import Navbar from "../components/navbar/navbar";
 import ContentfulContext from "../context/contentful/context";
 
-export const useGetContentfulEntries = loader$(async () => {
-  // const { VITE_SPACE, VITE_CONTENTFUL_ACCESS_TOKEN } = process.env;
+export const useGetContentfulEntries = loader$(async (event) => {
+  // const { VITE_SPACE, VITE_CONTENTFUL_ACCESS_TOKEN } = event.platform.process.env;
   // const url = `https://cdn.contentful.com/spaces/${VITE_SPACE}/environments/${"master"}/entries?access_token=${VITE_CONTENTFUL_ACCESS_TOKEN}`;
   // const res = await fetch(url);
   // const json = await res.json();
-
+  console.log(event.platform);
   // json.items
   return { data: [] };
 });
