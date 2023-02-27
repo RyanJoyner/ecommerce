@@ -1,13 +1,15 @@
 import { component$, useContextProvider, Slot } from "@builder.io/qwik";
 import { loader$ } from "@builder.io/qwik-city";
-import { useGetContentfulEntries } from "../../netlify/functions/contentful";
+// import { useGetContentfulEntries } from "../../netlify/functions/contentful";
 
 import ContentfulContext from "../context/contentful/context";
 
 import Navbar from "../components/navbar/navbar";
 
 export const loadContentfulEntries = loader$(async () => {
-  const response = await fetch("/.netlify/functions/contentful");
+  const response = await fetch("/.netlify/functions/contentful").then(
+    (response) => response.json()
+  );
   return { data: response.body };
 });
 
