@@ -7,7 +7,7 @@ import ContentfulContext from "../context/contentful/context";
 import Navbar from "../components/navbar/navbar";
 
 export const loadContentfulEntries = loader$(async () => {
-  const response = await fetch("/.netlify/functions/contentful").then(
+  const response = await fetch("../../netlify/functions/contentful").then(
     (response) => response.json()
   );
   return { data: response.body };
