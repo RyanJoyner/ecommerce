@@ -9,7 +9,7 @@ const useGetContentfulEntries: Handler = async (
   const res = await fetch(url);
   const json = await res.json();
 
-  return { statusCode: 200, body: json.items };
+  return { statusCode: 200, body: JSON.stringify(json.items) };
 };
 
 export { useGetContentfulEntries };
