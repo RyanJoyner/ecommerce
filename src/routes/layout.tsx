@@ -1,13 +1,13 @@
 import {
   component$,
-  useContextProvider,
+  // useContextProvider,
   Slot,
   useResource$,
 } from "@builder.io/qwik";
 // import { loader$ } from "@builder.io/qwik-city";
 // import { useGetContentfulEntries } from "../../netlify/functions/contentful";
 
-import ContentfulContext from "../context/contentful/context";
+// import ContentfulContext from "../context/contentful/context";
 
 import Navbar from "../components/navbar/navbar";
 
@@ -25,7 +25,7 @@ export async function getContentfulEntries(
     signal: controller?.signal,
   });
   // const json = await response.json();
-  // console.log("response", response);
+  console.log("response", response);
   // return { data: json.data.items };
 }
 
@@ -35,7 +35,7 @@ export default component$(() => {
   const contentfulEntries = useResource$<any>(({ track, cleanup }) => {
     // We need a way to re-run fetching data whenever the `github.org` changes.
     // Use `track` to trigger re-running of this data fetching function.
-    // track(() => github.org);
+    track(() => {});
 
     // A good practice is to use `AbortController` to abort the fetching of data if
     // new request comes in. We create a new `AbortController` and register a `cleanup`
@@ -47,7 +47,7 @@ export default component$(() => {
     return getContentfulEntries(controller);
   });
 
-  // console.log("contentfulEntries", contentfulEntries);
+  console.log("contentfulEntries", contentfulEntries);
 
   // useContextProvider(ContentfulContext, { posts: contentfulEntries });
 
