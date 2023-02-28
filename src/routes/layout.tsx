@@ -1,11 +1,12 @@
 import {
   component$,
   Slot,
+  Resource,
   useResource$,
-  useContextProvider,
+  // useContextProvider,
 } from "@builder.io/qwik";
 
-import ContentfulContext from "../context/contentful/context";
+// import ContentfulContext from "../context/contentful/context";
 
 import Navbar from "../components/navbar/navbar";
 
@@ -13,15 +14,14 @@ export async function getContentfulEntries(
   controller?: AbortController
 ): Promise<any> {
   const response = await fetch("/.netlify/functions/contentful", {
+    method: "GET",
     signal: controller?.signal,
-  });
-  const json = await response.json();
+  }).then((response) => response.json());
   console.log("response", response);
-  return { data: json.data.items };
+  return { data: response?.body?.items };
 }
 
 export default component$(() => {
-
   const contentfulEntries = useResource$<any>(({ track, cleanup }) => {
     // We need a way to re-run fetching data whenever the `github.org` changes.
     // Use `track` to trigger re-running of this data fetching function.
@@ -37,15 +37,25 @@ export default component$(() => {
     return getContentfulEntries(controller);
   });
 
-  console.log("contentfulEntries", contentfulEntries);
+  // console.log("contentfulEntries", contentfulEntries);
 
-  useContextProvider(ContentfulContext, { posts: contentfulEntries });
+  // useContextProvider(ContentfulContext, { posts: contentfulEntries.data });
 
   return (
     <>
       <main>
         <Navbar />
         <Slot />
+        <Resource
+          value={contentfulEntries}
+          onPending={() => <>Loading...</>}
+          onRejected={(error) => <>Error: {error.message}</>}
+          onResolved={(items) => (
+            <div>
+              {items}
+            </div>
+          )}
+        />
       </main>
       <footer>
         {/* TODO: Make the footer sticky and create some content here! */}
