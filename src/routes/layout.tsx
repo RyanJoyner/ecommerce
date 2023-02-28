@@ -13,12 +13,19 @@ import Navbar from "../components/navbar/navbar";
 export async function getContentfulEntries(
   controller?: AbortController
 ): Promise<any> {
-  const response = await fetch("/.netlify/functions/contentful", {
-    method: "GET",
-    signal: controller?.signal,
-  }).then((response) => response.json());
-  console.log("response", response);
-  return { data: response?.body?.items };
+  // const response = await fetch("/.netlify/functions/contentful", {
+  //   method: "GET",
+  //   signal: controller?.signal,
+  // }).then((response) => response.json());
+  // console.log("response", response);
+  // return { data: response?.body?.items };
+
+  const { VITE_SPACE, VITE_CONTENTFUL_ACCESS_TOKEN } = process.env;
+  const url = `https://cdn.contentful.com/spaces/${VITE_SPACE}/environments/${"master"}/entries?access_token=${VITE_CONTENTFUL_ACCESS_TOKEN}`;
+  const response = await fetch(url);
+  const data = await response.json();
+
+  return { data: data.items };
 }
 
 export default component$(() => {
@@ -50,11 +57,7 @@ export default component$(() => {
           value={contentfulEntries}
           onPending={() => <>Loading...</>}
           onRejected={(error) => <>Error: {error.message}</>}
-          onResolved={(items) => (
-            <div>
-              {items}
-            </div>
-          )}
+          onResolved={(items) => <div>{items}</div>}
         />
       </main>
       <footer>
