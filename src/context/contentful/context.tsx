@@ -4,4 +4,4 @@
 
 // export default ContentfulContext;
 
-export {};
+export default {};
