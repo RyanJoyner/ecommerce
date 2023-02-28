@@ -2,9 +2,9 @@ import {
   component$,
   useStylesScoped$,
   useStore,
-  useContext,
+  // useContext,
 } from "@builder.io/qwik";
-import ContentfulContext from "../../context/contentful/context";
+// import ContentfulContext from "../../context/contentful/context";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import treeMapData from "./data";
 
@@ -12,9 +12,9 @@ import styles from "./_blog.scss?inline";
 
 import ChartWrapper from "./ChartWrapper";
 
-interface postContextShape {
-  posts?: any[];
-}
+// interface postContextShape {
+//   posts?: any[];
+// }
 
 export default component$(() => {
   useStylesScoped$(styles);
@@ -23,19 +23,19 @@ export default component$(() => {
     message: "",
   });
 
-  const postContext: postContextShape = useContext(ContentfulContext);
+  // const postContext: postContextShape = useContext(ContentfulContext);
 
-  const Posts = postContext.posts
-    ? postContext.posts.map(({ sys, fields }) => {
-        return { ...fields, id: sys.id };
-      }) || []
-    : [];
+  // const Posts = postContext.posts
+  //   ? postContext.posts.map(({ sys, fields }) => {
+  //       return { ...fields, id: sys.id };
+  //     }) || []
+  //   : [];
 
-  const activeKeyMap = {
-    "7pJV1v5zUdphd7EFPbijHt": ["Disney"],
-    "7m8ZEvd4ZVa5JdsdGitqtO": ["Google"],
-    "412W9sk8dg7Yi6SPaEmWLx": ["Apple", "Twitter"],
-  };
+  // const activeKeyMap = {
+  //   "7pJV1v5zUdphd7EFPbijHt": ["Disney"],
+  //   "7m8ZEvd4ZVa5JdsdGitqtO": ["Google"],
+  //   "412W9sk8dg7Yi6SPaEmWLx": ["Apple", "Twitter"],
+  // };
 
   return (
     <div class="blog-list-container">
@@ -44,7 +44,7 @@ export default component$(() => {
         <ChartWrapper data={treeMapData} store={store} />
       </div>
       <div class="list">
-        {Posts.map(({ id, title }: { id: string; title: string }) => {
+        {/* {Posts.map(({ id, title }: { id: string; title: string }) => {
           // @ts-ignore
           const isActive = activeKeyMap[id].find((name) => name === store.name)
             ? "active"
@@ -54,7 +54,7 @@ export default component$(() => {
               <a href={id}>{title}</a>
             </div>
           );
-        })}
+        })} */}
       </div>
       <div class="company-text">{store.message}</div>
     </div>
