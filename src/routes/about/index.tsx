@@ -26,7 +26,6 @@ export default component$(() => {
               customClass="resume-btn"
               callBack={$(() => {
                 window.open("/Resume.png", "_blank", "fullscreen=yes");
-                return false;
               })}
             />
           </div>
