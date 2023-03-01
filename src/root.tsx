@@ -1,10 +1,4 @@
-import {
-  component$,
-  useStyles$,
-  useSignal,
-  useContextProvider,
-  createContextId,
-} from "@builder.io/qwik";
+import { component$, useStyles$ } from "@builder.io/qwik";
 import {
   QwikCityProvider,
   RouterOutlet,
@@ -13,12 +7,6 @@ import {
 import { RouterHead } from "./components/router-head/router-head";
 import global from "./global.scss?inline";
 
-export type ContentfulContext = any;
-
-// Create a new context descriptor
-export const ContentfulContext =
-  createContextId<ContentfulContext>("contentful-context");
-
 export default component$(() => {
   /**
    * The root of a QwikCity site always start with the <QwikCityProvider> component,
@@ -26,10 +14,6 @@ export default component$(() => {
    *
    * Dont remove the `<head>` and `<body>` elements.
    */
-
-  const contentfulStore = useSignal<ContentfulContext>();
-
-  useContextProvider(ContentfulContext, contentfulStore);
 
   useStyles$(global);
 

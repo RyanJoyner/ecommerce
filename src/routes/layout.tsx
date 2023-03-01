@@ -1,5 +1,7 @@
-import { component$, Slot } from "@builder.io/qwik";
+import { component$, Slot, useContext } from "@builder.io/qwik";
 import { loader$ } from "@builder.io/qwik-city";
+
+import { GlobalContext } from "../../context";
 
 import Navbar from "../components/navbar/navbar";
 
@@ -14,7 +16,11 @@ export const getContentfulEntries = loader$(async ({ platform }) => {
 });
 
 export default component$(() => {
-  // const signal = getContentfulEntries();
+  const signal = getContentfulEntries();
+
+  const global = useContext(GlobalContext);
+
+  global.value.items = getContentfulEntries().value.items;
 
   return (
     <>

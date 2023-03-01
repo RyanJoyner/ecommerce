@@ -4,7 +4,7 @@ import {
   useStore,
   // useContext,
 } from "@builder.io/qwik";
-// import ContentfulContext from "../../context/contentful/context";
+// import ContentfulContext from "../../context";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import treeMapData from "./data";
 

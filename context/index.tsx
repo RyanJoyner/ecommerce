@@ -10,7 +10,7 @@ export type ContentfulContext = any;
 // Create a new context descriptor
 export const GlobalContext = createContextId<ContentfulContext>("global");
 
-export default component$(() => {
+export const Parent = component$(() => {
   // Creating reactive storage
   const globalStore = useSignal<ContentfulContext>();
 

@@ -6,7 +6,7 @@ import {
   useTask$,
 } from "@builder.io/qwik";
 import { useLocation } from "@builder.io/qwik-city";
-import ContentfulContext from "../../../context/contentful/context";
+import { GlobalContext } from "../../../../context";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
@@ -18,7 +18,7 @@ export default component$(() => {
   const location = useLocation();
   const { pathname } = location;
 
-  const state = useContext(ContentfulContext);
+  const state = useContext(GlobalContext);
 
   const post =
     //@ts-ignore
