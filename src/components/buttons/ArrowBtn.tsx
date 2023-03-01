@@ -1,4 +1,4 @@
-import { $, component$, useStylesScoped$, QRL } from "@builder.io/qwik";
+import { $, component$, useStylesScoped$, ValueOrPromise } from "@builder.io/qwik";
 import { RightArrow } from "~/components/icons";
 
 import styles from "./_buttons.scss?inline";
@@ -6,7 +6,7 @@ import styles from "./_buttons.scss?inline";
 type ArrowBtnProps = {
   text: string;
   customClass?: string;
-  callBack: QRL<() => void>;
+  callBack: () => ValueOrPromise<void>;
 };
 
 export default component$(
