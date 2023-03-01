@@ -26,7 +26,7 @@ export default component$(() => {
    * Dont remove the `<head>` and `<body>` elements.
    */
   // Creating reactive storage
-  const globalStore = useStore<ContentfulContext>({ items: [] });
+  const globalStore = useStore<ContentfulContext>({ contentfulEntries: [] });
 
   // Assigning value (state) to the context (ThemeContext)
   useContextProvider(GlobalContext, globalStore);

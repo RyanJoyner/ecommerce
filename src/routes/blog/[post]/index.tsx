@@ -18,11 +18,11 @@ export default component$(() => {
   const location = useLocation();
   const { pathname } = location;
 
-  const state = useContext(GlobalContext);
+  const globalContext = useContext(GlobalContext);
 
   const post =
     //@ts-ignore
-    state.posts.find(({ sys }) => {
+    globalContext.contentfulEntries.find(({ sys }) => {
       return sys.id === pathname.split("/")[2];
     }) || {};
 

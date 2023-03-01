@@ -5,17 +5,12 @@ import { GlobalContext } from "../root";
 
 import Navbar from "../components/navbar/navbar";
 
-export const getContentfulEntries = loader$(async ({ env, platform }) => {
-  console.log(env.get("VITE_SPACE"));
-  console.log(env.get("VITE_CONTENTFUL_ACCESS_TOKEN"));
-  console.log(platform);
+export const getContentfulEntries = loader$(async ({ env }) => {
+  const url = `https://cdn.contentful.com/spaces/${env.get("VITE_SPACE")}/environments/${"master"}/entries?access_token=${env.get("VITE_CONTENTFUL_ACCESS_TOKEN")}`;
+  const response = await fetch(url);
+  const data = await response.json();
 
-  // const { VITE_SPACE, VITE_CONTENTFUL_ACCESS_TOKEN } = process.env;
-  // const url = `https://cdn.contentful.com/spaces/${VITE_SPACE}/environments/${"master"}/entries?access_token=${VITE_CONTENTFUL_ACCESS_TOKEN}`;
-  // const response = await fetch(url);
-  // const data = await response.json();
-
-  return { items: [] };
+  return { items: data.items };
 });
 
 export default component$(() => {
@@ -23,7 +18,7 @@ export default component$(() => {
   const global = useContext(GlobalContext);
 
   useTask$(() => {
-    global.items = signal.value.items;
+    global.contentfulEntries = signal.value.items;
   });
 
   return (
