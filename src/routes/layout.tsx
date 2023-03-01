@@ -17,10 +17,9 @@ export const getContentfulEntries = loader$(async ({ platform }) => {
 
 export default component$(() => {
   const signal = getContentfulEntries();
-
   const global = useContext(GlobalContext);
 
-  global.value.items = getContentfulEntries().value.items;
+  global.value.items = signal.value.items;
 
   return (
     <>
