@@ -5,7 +5,8 @@ import { GlobalContext } from "../root";
 
 import Navbar from "../components/navbar/navbar";
 
-export const getContentfulEntries = loader$(async ({ platform }) => {
+export const getContentfulEntries = loader$(async ({ env, platform }) => {
+  console.log(env);
   console.log(platform);
   // const { VITE_SPACE, VITE_CONTENTFUL_ACCESS_TOKEN } = process.env;
   // const url = `https://cdn.contentful.com/spaces/${VITE_SPACE}/environments/${"master"}/entries?access_token=${VITE_CONTENTFUL_ACCESS_TOKEN}`;
