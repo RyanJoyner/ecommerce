@@ -1,7 +1,7 @@
-import { component$, Slot, useContext } from "@builder.io/qwik";
+import { component$, Slot, useContext, useTask$ } from "@builder.io/qwik";
 import { loader$ } from "@builder.io/qwik-city";
 
-import { GlobalContext } from "../../context";
+import { GlobalContext } from "../root";
 
 import Navbar from "../components/navbar/navbar";
 
@@ -19,7 +19,9 @@ export default component$(() => {
   const signal = getContentfulEntries();
   const global = useContext(GlobalContext);
 
-  global.value.items = signal.value.items;
+  useTask$(() => {
+    global.items = signal.value.items;
+  });
 
   return (
     <>

@@ -6,7 +6,7 @@ import {
   useTask$,
 } from "@builder.io/qwik";
 import { useLocation } from "@builder.io/qwik-city";
-import { GlobalContext } from "../../../../context";
+import { GlobalContext } from "../../../root";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
@@ -39,7 +39,7 @@ export default component$(() => {
       };
 
       const controller = new AbortController();
-      
+
       cleanup(() => controller.abort());
     },
     { eagerness: "load" }
