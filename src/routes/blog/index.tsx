@@ -4,11 +4,15 @@ import {
   useStore,
   useContext,
 } from "@builder.io/qwik";
+// import type { DocumentHead, Link } from "@builder.io/qwik-city";
+
 import { GlobalContext } from "../../root";
-import type { DocumentHead } from "@builder.io/qwik-city";
+
 import treeMapData from "./data";
 
 import styles from "./_blog.scss?inline";
+
+import { Link } from "~/components/buttons";
 
 import ChartWrapper from "./ChartWrapper";
 
@@ -51,7 +55,7 @@ export default component$(() => {
             : "";
           return (
             <div class={`h1 post-tag ${isActive}`}>
-              <a href={id}>{title}</a>
+              <Link href={id}>{title}</Link>
             </div>
           );
         })}
@@ -60,13 +64,3 @@ export default component$(() => {
     </div>
   );
 });
-
-export const head: DocumentHead = {
-  title: "Welcome to Qwik",
-  meta: [
-    {
-      name: "description",
-      content: "Qwik site description",
-    },
-  ],
-};
