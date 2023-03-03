@@ -13,7 +13,7 @@ export const getContentfulEntries = loader$(async ({ env }) => {
   )}`;
   const response = await fetch(url);
   const data = await response.json();
-  console.log("fired");
+  console.log("data", data);
   return { items: data.items };
 });
 
@@ -22,6 +22,7 @@ export default component$(() => {
   const global = useContext(GlobalContext);
 
   useTask$(() => {
+    console.log("global", global);
     console.log("signal", signal.value.items);
     global.contentfulEntries = signal.value.items;
   });
