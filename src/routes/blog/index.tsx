@@ -12,8 +12,6 @@ import treeMapData from "./data";
 
 import styles from "./_blog.scss?inline";
 
-import { Link } from "~/components/buttons";
-
 import ChartWrapper from "./ChartWrapper";
 
 interface GlobalContextShape {
