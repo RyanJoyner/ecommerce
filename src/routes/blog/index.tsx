@@ -4,7 +4,6 @@ import {
   useStore,
   useContext,
 } from "@builder.io/qwik";
-// import type { DocumentHead, Link } from "@builder.io/qwik-city";
 
 import { GlobalContext } from "../../root";
 

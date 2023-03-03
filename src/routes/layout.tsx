@@ -6,7 +6,11 @@ import { GlobalContext } from "../root";
 import Navbar from "../components/navbar/navbar";
 
 export const getContentfulEntries = loader$(async ({ env }) => {
-  const url = `https://cdn.contentful.com/spaces/${env.get("VITE_SPACE")}/environments/${"master"}/entries?access_token=${env.get("VITE_CONTENTFUL_ACCESS_TOKEN")}`;
+  const url = `https://cdn.contentful.com/spaces/${env.get(
+    "VITE_SPACE"
+  )}/environments/${"master"}/entries?access_token=${env.get(
+    "VITE_CONTENTFUL_ACCESS_TOKEN"
+  )}`;
   const response = await fetch(url);
   const data = await response.json();
 
@@ -18,6 +22,7 @@ export default component$(() => {
   const global = useContext(GlobalContext);
 
   useTask$(() => {
+    console.log(signal.value.items);
     global.contentfulEntries = signal.value.items;
   });
 
