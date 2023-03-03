@@ -24,7 +24,6 @@ export default component$(({ store }: { store: any }) => {
             store.index = index;
           },
           colors: ["#BCAE43", "#CABF68", "#D8CF8D", "#CCCCCC", "#E6E6E6"],
-          // @ts-ignore
         })
       );
       () => {
@@ -36,7 +35,6 @@ export default component$(({ store }: { store: any }) => {
   return (
     <div
       ref={chartRef}
-      // class="chart-wrapper"
       style={{ marginLeft: "-30px" }}
     ></div>
   );

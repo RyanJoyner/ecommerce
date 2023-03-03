@@ -12,7 +12,7 @@ export default component$(() => {
   return (
     <>
       <div class="text" ref={textRef}>
-        Code Content Design & Product Consulting
+        Code Content Design & Product Development
       </div>
       <div class="landing-grid">
         <div class="landing-copy">
@@ -23,7 +23,7 @@ export default component$(() => {
             })}
           />
           <span class="tag">
-            Former Journalist, Current Software Engineer, Your Future Consultant
+            Former Journalist, Current Software Engineer, Your Future Developer
           </span>
           <h1 class="name">RYAN JOYNER</h1>
         </div>

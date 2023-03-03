@@ -1,9 +1,6 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
-import { useLocation } from "@builder.io/qwik-city";
+import { Link } from "@builder.io/qwik-city";
 import { Slot } from "@builder.io/qwik";
-
-// TODO extend Link to include proper styles
-// import { Link } from "@builder.io/qwik-city";
 
 import styles from "./_buttons.scss?inline";
 
@@ -14,23 +11,12 @@ type LinkProps = {
 
 export default component$(({ href = "", target = "" }: LinkProps) => {
   useStylesScoped$(styles);
-  const location = useLocation();
-  const { pathname } = location;
-  const isActive =
-    pathname === `${href}/`
-      ? {
-          // borderBottom: "2px solid",
-        }
-      : {};
 
   return (
-    <a
-      class="btn btn-link"
-      href={href}
-      target={target}
-      style={isActive}
-    >
-      <Slot />
-    </a>
+    <div class="btn btn-link">
+      <Link href={href} target={target}>
+        <Slot />
+      </Link>
+    </div>
   );
 });
