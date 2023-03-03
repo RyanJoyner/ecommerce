@@ -55,7 +55,7 @@ export default component$(() => {
             : "";
           return (
             <div class={`h1 post-tag ${isActive}`}>
-              <Link href={id}>{title}</Link>
+              <a href={id}>{title}</a>
             </div>
           );
         })}
