@@ -11,7 +11,7 @@ export const BubbleChart = (
   {
     value = ([, y]) => y, // given d in data, returns a quantitative size
     group, // given d in data, returns a categorical value for color
-    width = 680, // outer width, in pixels
+    width = 600, // outer width, in pixels
     height = width, // outer height, in pixels
     padding = 3, // padding between circles
     margin = 2, // default margins
