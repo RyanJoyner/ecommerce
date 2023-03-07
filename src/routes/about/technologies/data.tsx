@@ -4,7 +4,7 @@ import {
   NodeJsIcon,
   TypeScriptIcon,
   GraphQLIcon,
-  PythonIcon,
+  // PythonIcon,
   QwikIcon,
   D3Icon,
 } from "~/components/icons";
@@ -87,14 +87,14 @@ export default [
     value: 2,
     group: "BE",
   },
-  {
-    id: "Python",
-    Icon: PythonIcon,
-    description:
-      "My current studies include python and finance. With a goal of building python web servers proficiently this year!",
-    aside:
-      "Thank you for being dynamicly typed and having awesome math and data visualization libraries.",
-    value: parseFloat(years("September, 2022")),
-    group: "BE",
-  },
+  // {
+  //   id: "Python",
+  //   Icon: PythonIcon,
+  //   description:
+  //     "My current studies include python and finance. With a goal of building python web servers proficiently this year!",
+  //   aside:
+  //     "Thank you for being dynamicly typed and having awesome math and data visualization libraries.",
+  //   value: parseFloat(years("September, 2022")),
+  //   group: "BE",
+  // },
 ];
