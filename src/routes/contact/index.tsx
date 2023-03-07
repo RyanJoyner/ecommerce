@@ -1,15 +1,16 @@
 import {
+  $,
   component$,
+  useBrowserVisibleTask$,
   useSignal,
   useStore,
   useStylesScoped$,
-  $,
 } from "@builder.io/qwik";
-import type { DocumentHead } from "@builder.io/qwik-city";
 import emailjs from "@emailjs/browser";
 
 import Input from "~/components/inputs";
 import { RightArrow } from "~/components/icons";
+import Toast from "../../components/toast";
 
 import styles from "./_contact.scss?inline";
 
@@ -40,72 +41,96 @@ export default component$(() => {
   });
 
   const formIsValid = useSignal(false);
+  const successMessageState = useSignal(false);
+
+  useBrowserVisibleTask$(({ track }) => {
+    track(() => successMessageState.value);
+
+    // TODO: For some reason the values won't clear grrr. 
+    state.name.value = "";
+    state.email.value = "";
+    state.message.value = "";
+
+    setTimeout(() => {
+      successMessageState.value = false;
+    }, 3000);
+  });
 
   const sendEmail = $(() => {
     const { name, email, message } = state;
-    emailjs.send(
-      VITE_EMAILJS_SERVICE_ID,
-      VITE_EMAILJS_TEMPLATE_ID,
-      {
-        from_name: name.value,
-        email: email.value,
-        message: message.value,
-      },
-      VITE_EMAILJS_PUBLIC_KEY
-    );
+    emailjs
+      .send(
+        VITE_EMAILJS_SERVICE_ID,
+        VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: name.value,
+          email: email.value,
+          message: message.value,
+        },
+        VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then((res) => {
+        if (res.status === 200) {
+          successMessageState.value = true;
+        }
+      });
     () => {};
   });
 
   return (
-    <container class="contact form">
-      <h1>Contact</h1>
-      <Input
-        name="name"
-        formState={state}
-        label="Name"
-        type="text"
-        errorMessage="Please enter a name."
-      />
-      <Input
-        name="email"
-        formState={state}
-        label="Email"
-        type="text"
-        pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
-        errorMessage="Please enter a valid email."
-      />
-      <Input
-        name="message"
-        formState={state}
-        label="Message"
-        type="text"
-        errorMessage="Please enter a message."
-      />
-      <div
-        class="arrow-btn"
-        onClick$={() => {
-          for (const field in state) {
-            // @ts-ignore
-            formIsValid.value = state[field].value.length > 0;
-          }
-          if (formIsValid.value) {
-            sendEmail();
-          }
-        }}
-      >
-        <i class="text">Submit</i>
-        <RightArrow />
-      </div>
-    </container>
+    <>
+      {successMessageState.value && (
+        <div
+          style={{
+            position: "absolute",
+            top: "100px",
+            right: "100px",
+            width: "420px",
+          }}
+        >
+          <Toast message="Your email has been received!" state="success" />
+        </div>
+      )}
+      <container class="contact form">
+        <h1>Contact</h1>
+        <Input
+          name="name"
+          formState={state}
+          label="Name"
+          type="text"
+          errorMessage="Please enter a name."
+        />
+        <Input
+          name="email"
+          formState={state}
+          label="Email"
+          type="text"
+          pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+          errorMessage="Please enter a valid email."
+        />
+        <Input
+          name="message"
+          formState={state}
+          label="Message"
+          type="text"
+          errorMessage="Please enter a message."
+        />
+        <div
+          class="arrow-btn"
+          onClick$={() => {
+            for (const field in state) {
+              // @ts-ignore
+              formIsValid.value = state[field].value.length > 0;
+            }
+            if (formIsValid.value) {
+              sendEmail();
+            }
+          }}
+        >
+          <i class="text">Submit</i>
+          <RightArrow />
+        </div>
+      </container>
+    </>
   );
 });
-
-export const head: DocumentHead = {
-  title: "Welcome to Qwik",
-  meta: [
-    {
-      name: "description",
-      content: "Qwik site description",
-    },
-  ],
-};
