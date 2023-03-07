@@ -11,10 +11,10 @@ export default component$(() => {
           <i>Hello! I'm Ryan</i>
         </h1>
         <p>
-          A software engineer with a background in journalism public relations
+          A software engineer with a background in journalism, public relations
           and political science. Data driven journalism turned me on to the
           world of web development in college, and I've been building component
-          and data architecture for web applications ever since.
+          architecture for web applications ever since.
         </p>
         <p class="last">
           {" "}
