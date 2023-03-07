@@ -8,7 +8,7 @@ const treeMapData = {
       image: "",
       link: "https://www.google.com/search?q=apple+market+cap&sxsrf=AJOqlzWdqUVF2iD9bfxgwPOOiCqD9QK6bg%3A1675099281957&ei=kfzXY-KLOunbkPIPgLGq8AU&ved=0ahUKEwiimKiN5-_8AhXpLUQIHYCYCl4Q4dUDCBE&uact=5&oq=apple+market+cap&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIHCCMQJxCdAjIHCAAQgAQQCjIHCAAQgAQQCjIHCAAQgAQQCjIHCAAQgAQQCjIGCAAQBxAeMgcIABCABBAKMgcIABCABBAKMgcIABCABBAKMgcIABCABBAKOgoIABBHENYEELADOgcIABCwAxBDOg0IABDkAhDWBBCwAxgBOg8ILhDUAhDIAxCwAxBDGAI6DAguEMgDELADEEMYAkoECEEYAEoECEYYAVCZCFjSEGCwFGgCcAF4AYAB3gKIAecFkgEHMi4yLjAuMZgBAKABAcgBEsABAdoBBggBEAEYCdoBBggCEAEYCA&sclient=gws-wiz-serp",
       message:
-        "I guess it's only fair an organization which prides itself on it's walled garden also revels in gatekeeping.",
+        "Is it a surprise that an organization which prides itself on it's walled garden also revels in gatekeeping?",
     },
     {
       name: "Disney",
@@ -16,8 +16,7 @@ const treeMapData = {
       label: "201.00 billion USD",
       image: "",
       link: "https://www.google.com/search?q=disney+market+cap&sxsrf=AJOqlzV-GLK5yIwWqeR3q4-1eNCODqK5nA%3A1675099253745&ei=dfzXY8aHLafLkPIPxOCM8A8&ved=0ahUKEwiGlu7_5u_8AhWnJUQIHUQwA_4Q4dUDCBE&uact=5&oq=disney+market+cap&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIHCCMQJxCdAjIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCGAzoKCAAQRxDWBBCwAzoHCAAQsAMQQzoNCAAQ5AIQ1gQQsAMYAToMCC4QyAMQsAMQQxgCOhIILhDHARDRAxDIAxCwAxBDGAI6BQgAEJECOgsIABCABBCxAxCDAToICAAQgAQQsQM6FAguEIAEELEDEIMBEMcBEK8BENQCOgoIABCABBAUEIcCOgcIABCABBAKSgQIQRgASgQIRhgBUNAKWKkWYIIZaAJwAXgBgAGZA4gByQmSAQc3LjIuNC0xmAEAoAEByAESwAEB2gEGCAEQARgJ2gEGCAIQARgI&sclient=gws-wiz-serp",
-      message:
-        "A conglomerate founded on good story telling. Clear writing wins again and again.",
+      message: "A conglomerate founded on good story telling.",
     },
     {
       name: "Google",
@@ -34,8 +33,7 @@ const treeMapData = {
       label: "41.09 billion USD",
       image: "",
       link: "https://www.google.com/search?q=twitter+market+cap&oq=twitter+market+cap&aqs=chrome.0.69i59j0i512l9.2979j0j9&sourceid=chrome&ie=UTF-8",
-      message:
-        "Just another piece of the American puzzle of free speech.",
+      message: "Just another piece of the American puzzle of free speech.",
     },
   ],
 };

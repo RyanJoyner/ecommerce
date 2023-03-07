@@ -16,14 +16,14 @@ export default component$(() => {
   useStylesScoped$(styles);
   const postRef = useSignal<HTMLDivElement>();
   const location = useLocation();
-  const { pathname } = location;
+  const { url } = location;
 
   const globalContext = useContext(GlobalContext);
 
   const post =
     //@ts-ignore
     globalContext.contentfulEntries.find(({ sys }) => {
-      return sys.id === pathname.split("/")[2];
+      return sys.id === url.pathname.split("/")[2];
     }) || {};
 
   useTask$(

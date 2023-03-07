@@ -41,7 +41,12 @@ export default component$(() => {
   return (
     <div class="blog-list-container">
       <div class="chart">
-        <h7 class="h7">Market Cap in billions</h7>
+        <h7 class="h8">
+          <i>
+            A treemap of corporation's by market cap in billions. Click to see loose
+            relation to blog posts. Enjoy!
+          </i>
+        </h7>
         <ChartWrapper data={treeMapData} store={store} />
       </div>
       <div class="list">

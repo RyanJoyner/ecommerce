@@ -22,9 +22,8 @@ export default component$(
     errorMessage = "",
     minLength = 1,
   }: LinkProps) => {
-    const input = formState[name];
-
     useStylesScoped$(styles);
+    const input = formState[name];
 
     return (
       <div class="group">

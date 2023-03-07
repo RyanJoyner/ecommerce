@@ -10,15 +10,14 @@ export default component$(() => {
       <section class="navbar-section home-text">
         <a href="/">
           <h3 class="brand" style={{ underline: "none", marginBottom: "0" }}>
-            Ryan J. Consulting
+            Ryan J.
           </h3>
         </a>
       </section>
       <section class="navbar-section">
-        <Link href="/about">About</Link>
+        <Link href="/about/profile">About</Link>
         <Link href="/blog">Blog</Link>
         <Link href="/contact">Contact</Link>
-        <Link href="/technologies">Technologies</Link>
       </section>
     </navbar>
   );
