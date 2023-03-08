@@ -275,6 +275,10 @@
   margin-top: 10px;
   letter-spacing: 2px;
 
+  @media (max-width: 420px) {
+    justify-content: center;
+  }
+
   i {
     font-size: 0.9rem;
     margin-right: 10px;

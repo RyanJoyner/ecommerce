@@ -9,7 +9,6 @@
   @media (max-width: 420px) {
     grid-template-columns: none;
     grid-template-rows: 1fr 1fr;
-    padding-top: 22%;
   }
 }
 
@@ -29,6 +28,7 @@
   .experience {
     margin-bottom: 50px;
     margin-top: 10px;
+    
     i {
       font-size: 1.2em;
     }

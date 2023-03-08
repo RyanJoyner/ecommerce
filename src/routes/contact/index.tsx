@@ -42,14 +42,10 @@ export default component$(() => {
 
   const formIsValid = useSignal(false);
   const successMessageState = useSignal(false);
+  const formRef = useSignal<HTMLFormElement>();
 
   useBrowserVisibleTask$(({ track }) => {
     track(() => successMessageState.value);
-
-    // TODO: For some reason the values won't clear grrr. 
-    state.name.value = "";
-    state.email.value = "";
-    state.message.value = "";
 
     setTimeout(() => {
       successMessageState.value = false;
@@ -72,13 +68,14 @@ export default component$(() => {
       .then((res) => {
         if (res.status === 200) {
           successMessageState.value = true;
+          formRef?.value?.reset();
         }
       });
     () => {};
   });
 
   return (
-    <>
+    <form ref={formRef}>
       {successMessageState.value && (
         <div
           style={{
@@ -131,6 +128,6 @@ export default component$(() => {
           <RightArrow />
         </div>
       </container>
-    </>
+    </form>
   );
 });

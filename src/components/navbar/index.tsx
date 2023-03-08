@@ -7,7 +7,7 @@ export default component$(() => {
 
   return (
     <navbar class="navbar">
-      <section class="navbar-section home-text">
+      <section class="navbar-section">
         <a href="/">
           <h3 class="brand" style={{ underline: "none", marginBottom: "0" }}>
             Ryan J.

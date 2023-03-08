@@ -35,7 +35,7 @@ export default component$(({ store }: { store: any }) => {
   return (
     <div
       ref={chartRef}
-      style={{ marginLeft: "-100px" }}
+      style={{ marginLeft: "-20px" }}
     ></div>
   );
 });
