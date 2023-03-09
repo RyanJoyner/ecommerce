@@ -44,7 +44,7 @@ export default [
     id: "Qwik",
     Icon: QwikIcon,
     description:
-      "The new goodness, hopefully resumeability is all it's chalked up to be! Thank you for feeling like react. I'm hopeful you solve all of my PWA problems.",
+      "The new goodness, hopefully resumability is all it's chalked up to be! Thank you for feeling like react. I'm hopeful you solve all of my PWA problems.",
     aside: "My experience is this portfolio site!",
     value: parseFloat(years("September, 2022")),
     group: "FE",
