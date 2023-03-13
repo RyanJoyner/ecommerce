@@ -10,6 +10,7 @@
   left: 0;
   padding: 10px 10% 15px 10%;
   border-bottom: 0.5px solid;
+  margin-bottom: 50px;
 
   @media (max-width: 420px) {
     padding: 10px 5%;
@@ -39,6 +40,12 @@
 
 .brand {
   line-height: 1;
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+  background: white;
 }
 
 .btn.btn-link {

@@ -1,0 +1,214 @@
+@use "../../styles/_variables.scss" as *;
+
+// Carousels
+.carousel {
+  background: $bg-color;
+  display: block;
+  position: relative;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+  z-index: $zindex-0;
+
+  .left-arrow,
+  .right-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    .end {
+      opacity: 5;
+    }
+  }
+  .left-arrow {
+    left: -2rem;
+  }
+  .right-arrow {
+    right: -2rem;
+  }
+
+  .carousel-container {
+    height: 100%;
+    left: 0;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      display: block;
+      padding-bottom: 56.25%;
+    }
+
+    .carousel-item {
+      position: absolute;
+      top: 0;
+
+      &.right {
+        animation: carousel-slideout-right 0.75s ease-in-out;
+      }
+
+      &.active.right {
+        animation: carousel-slidein-right 0.75s ease-in-out;
+        opacity: 1;
+        z-index: $zindex-1;
+      }
+
+      &.left {
+        animation: carousel-slideout-left 0.75s ease-in-out;
+      }
+
+      &.active.left {
+        animation: carousel-slidein-left 0.75s ease-in-out;
+        opacity: 1;
+        z-index: $zindex-1;
+      }
+    }
+  }
+
+  .carousel-nav {
+    bottom: $layout-spacing;
+    display: flex;
+    justify-content: center;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 10rem;
+    z-index: $zindex-1;
+
+    .nav-item {
+      color: black;
+      display: block;
+      flex: 1 0 auto;
+      height: $unit-8;
+      margin: $unit-1;
+      max-width: 2.5rem;
+      position: relative;
+      top: 2.8rem;
+      border-bottom: 2px solid lightgrey;
+      width: 100%;
+
+      &.active {
+        border-bottom: 2px solid black;
+      }
+
+      &.active {
+        animation: carousel-slidein 0.75s ease-in-out 1;
+        opacity: 1;
+        z-index: $zindex-1;
+      }
+    }
+  }
+}
+
+// from left
+@keyframes carousel-slidein-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+// from left
+@keyframes carousel-slideout-left {
+  0% {
+    opacity: 1;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+// from right
+@keyframes carousel-slidein-right {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+// from right
+@keyframes carousel-slideout-right {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-100%);
+  }
+}
+
+// Icon variables
+$icon-border-width: $border-width-lg;
+$icon-prefix: "icon";
+
+// Icon base style
+.#{$icon-prefix} {
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: inherit;
+  font-style: normal;
+  height: 1em;
+  position: relative;
+  text-indent: -9999px;
+  vertical-align: middle;
+  width: 1em;
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  // Icon sizes
+  &.icon-2x {
+    font-size: 1.6rem;
+  }
+
+  &.icon-3x {
+    font-size: 2.4rem;
+  }
+
+  &.icon-4x {
+    font-size: 3.2rem;
+  }
+}
+
+.icon-arrow-left,
+.icon-arrow-right {
+  &::before {
+    border: $icon-border-width solid black;
+    border-bottom: 0;
+    border-right: 0;
+    height: 0.65em;
+    width: 0.65em;
+  }
+
+  &.end::before {
+    border: $icon-border-width solid lightGrey;
+    border-bottom: 0;
+    border-right: 0;
+    height: 0.65em;
+    width: 0.65em;
+  }
+}
+
+.icon-arrow-left {
+  &::before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}
+
+.icon-arrow-right {
+  &::before {
+    transform: translate(-125%, -50%) rotate(135deg);
+  }
+}
