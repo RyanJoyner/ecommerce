@@ -1,4 +1,5 @@
 @use "../../styles/_variables.scss" as *;
+@use "../buttons/_buttons.scss" as *;
 
 // Navbar
 .navbar {
@@ -11,6 +12,7 @@
   padding: 10px 10% 15px 10%;
   border-bottom: 0.5px solid;
   margin-bottom: 50px;
+  z-index: 3;
 
   @media (max-width: 420px) {
     padding: 10px 5%;
@@ -73,4 +75,20 @@
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+}
+
+.menus-container {
+  width: 100%;
+  justify-content: end;
+  background: white;
+  position: fixed;
+  left: 0;
+  padding: 67.5px 10% 15px 10%;
+  border-bottom: 0.5px solid;
+  z-index: 2;
+  display: none;
+
+  &.active {
+    display: flex;
+  }
 }

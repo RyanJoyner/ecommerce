@@ -1,4 +1,4 @@
-import ArrowBtn from "./ArrowBtn";
+import Button from "./Button";
 import Link from "./Link";
 
-export { ArrowBtn, Link };
+export { Button, Link };

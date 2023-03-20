@@ -5,18 +5,21 @@ import { Slot } from "@builder.io/qwik";
 import styles from "./_buttons.scss?inline";
 
 type LinkProps = {
+  classExt?: string;
   href?: string;
   target?: string;
 };
 
-export default component$(({ href = "", target = "" }: LinkProps) => {
-  useStylesScoped$(styles);
+export default component$(
+  ({ classExt = "", href = "", target = "" }: LinkProps) => {
+    useStylesScoped$(styles);
 
-  return (
-    <div class="btn btn-link">
-      <Link href={href} target={target}>
-        <Slot />
-      </Link>
-    </div>
-  );
-});
+    return (
+      <div class={`btn btn-link ${classExt}`}>
+        <Link href={href} target={target}>
+          <Slot />
+        </Link>
+      </div>
+    );
+  }
+);

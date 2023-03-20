@@ -1,0 +1,38 @@
+{
+  "menuHeader": "GAMES",
+  "items": [
+    {
+      "name": "Swindler's Dice",
+      "href": "1",
+      "description": "",
+      "img": "https://cdn.shopify.com/s/files/1/0440/7857/products/Wooden-Dice_1200x.jpg?v=1665071609",
+      "price": "44.99",
+      "totalPledged": "75,000",
+      "goal": "100,000",
+      "backers": "100",
+      "endDate": ""
+    },
+    {
+      "name": "Polyhedral Deception",
+      "href": "2",
+      "description": "",
+      "img": "https://ksr-ugc.imgix.net/assets/039/463/371/2380c4f6ac4ce7e522db9c23a0c44172_original.jpg?ixlib=rb-4.0.2&crop=faces&w=1552&h=873&fit=crop&v=1671033433&auto=format&frame=1&q=92&s=bab4e05fed142e24cdef2d13b1ffdaa2",
+      "price": "34.99",
+      "totalPledged": "25,000",
+      "goal": "100,000",
+      "backers": "100",
+      "endDate": ""
+    },
+    {
+      "name": "Custom Classic I",
+      "href": "3",
+      "description": "",
+      "img": "https://cdn.dribbble.com/users/2669768/screenshots/8368071/media/d573349277c05e0fa7e4c43a0fe8ad6e.png?compress=1&resize=800x600&vertical=top",
+      "price": "24.99",
+      "totalPledged": "10,000",
+      "goal": "100,000",
+      "backers": "50",
+      "endDate": ""
+    }
+  ]
+}

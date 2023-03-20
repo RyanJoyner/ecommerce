@@ -1,19 +1,15 @@
-import { $, component$, useStylesScoped$, useSignal } from "@builder.io/qwik";
-// import { DocumentHead, useNavigate } from "@builder.io/qwik-city";
+import { component$, useStylesScoped$ } from "@builder.io/qwik";
 
-// import { ArrowBtn } from "~/components/buttons";
 import Carousel from "~/components/carousel";
 
 import styles from "./_landing.scss?inline";
 
 export default component$(() => {
-  // const navigate = useNavigate();
   useStylesScoped$(styles);
-  // const textRef = useSignal<HTMLDivElement>();
 
   return (
     <div class="landing-grid">
-      <div />
+      <div>Dedicated to helping gamers get the most out of classic games.</div>
       <Carousel
         items={[
           {
@@ -27,17 +23,7 @@ export default component$(() => {
           },
         ]}
       />
-      <div />
+      <div># Left</div>
     </div>
   );
 });
-
-// export const head: DocumentHead = {
-//   title: "Welcome to Qwik",
-//   meta: [
-//     {
-//       name: "description",
-//       content: "Qwik site description",
-//     },
-//   ],
-// };
