@@ -2,7 +2,7 @@ import { component$, Slot, useStylesScoped$ } from "@builder.io/qwik";
 
 import styles from "./_products.scss?inline";
 
-export default component$(({}) => {
+export default component$(() => {
   useStylesScoped$(styles);
 
   return (

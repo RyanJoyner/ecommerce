@@ -1,6 +1,5 @@
 import { component$, useSignal, useStylesScoped$ } from "@builder.io/qwik";
 import styles from "./_carousel.scss?inline";
-import Link from "../buttons/Link";
 
 interface CarouselProps {
   items: any;
@@ -13,6 +12,7 @@ export default component$(({ items }: CarouselProps) => {
 
   return (
     <div class="carousel">
+      {/* eslint-disable-next-line no-empty-pattern */}
       {items.map(({}, i: number) => {
         return (
           <input
@@ -77,6 +77,7 @@ export default component$(({ items }: CarouselProps) => {
       </div>
 
       <div class="carousel-nav">
+        {/* eslint-disable-next-line no-empty-pattern */}
         {items.map(({}, i: number) => {
           return (
             <div

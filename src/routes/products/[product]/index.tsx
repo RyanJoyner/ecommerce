@@ -9,6 +9,7 @@ import styles from "../_products.scss?inline";
 
 interface ProductProps {}
 
+// eslint-disable-next-line no-empty-pattern
 export default component$(({}: ProductProps) => {
   const global = useContext(GlobalContext);
   const { product } = useLocation().params;

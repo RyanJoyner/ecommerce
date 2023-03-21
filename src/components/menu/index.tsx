@@ -1,5 +1,4 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
-import { Link } from "../buttons";
 
 import styles from "./_menu.scss?inline";
 

@@ -1,13 +1,13 @@
-import { component$, JSXChildren } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 
 interface IconProps {
-  class?: string;
-  children?: JSXChildren;
+  className?: string;
 }
 
-export const ShoppingCart = component$((props: IconProps) => {
+export const ShoppingCart = component$(({ className = "" }: IconProps) => {
   return (
     <svg
+      class={className}
       xmlns="http://www.w3.org/2000/svg"
       height="24"
       width="24"
